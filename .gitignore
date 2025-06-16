@@ -1,24 +1,149 @@
-# Logs
-logs
+### Logs ###
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+*.logs
+*.log.*
+logfiles/
 
-node_modules
-dist
-dist-ssr
-*.local
+### Environment ###
+.env*
+!.env.example
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+.env.ci
+.env.vault
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
+### Supabase ###
+supabase/.env
+supabase/config.toml
+supabase/.temp/
+supabase/functions/*/node_modules
+supabase/migrations/
+supabase/seed.sql
+
+### Dependencies ###
+node_modules/
+/.pnp
+.pnp.js
+.yarn-integrity
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnpm-debug.log
+
+### Build ###
+dist/
+dist-ssr/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+.turbo/
+.serverless/
+.serverless_nextjs/
+.vscode-test/
+
+### Editor ###
+.idea/
+.vscode/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.swp
+.DS_Store
+*.code-workspace
+
+### System ###
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+### Testing ###
+coverage/
+.nyc_output/
+*.lcov
+jest-report.json
+/.jest-cache
+/cypress/screenshots/
+/cypress/videos/
+/test-results/
+
+### Debug ###
+debug/
+*.pdb
+*.idb
+*.ilk
+*.dll
+*.exe
+*.so
+*.dylib
+
+### Package Managers ###
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+.npm
+.eslintcache
+
+### OS Specific ###
+# Windows
+[Tt]humbs.db
+*.stackdump
+
+# Linux
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+### Development ###
+*.tmp
+*.temp
+*.bak
+*.backup
+*.sublime-workspace
+*.sublime-project
+*.vs/
+*.vspscc
+*.vssscc
+*.scc
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+### Visual Studio Code ###
+.history/
+*.code-search
+*.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+### Special Cases ###
+!.github/
+!.gitlab/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
