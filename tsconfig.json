@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "target": "ES2022",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "module": "NodeNext", // Changed from ESNext for Vercel compatibility
     "moduleResolution": "NodeNext",
     
     /* Strict Type-Checking */
@@ -47,7 +47,7 @@
     /* Output Control */
     "noEmit": true,
     "incremental": true,
-    "composite": true,
+    "composite": true, // Required for project references
     
     /* Type Checking */
     "skipLibCheck": true,
@@ -81,8 +81,17 @@
   ],
   
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" },
-    { "path": "./tsconfig.vitest.json" }
+    { 
+      "path": "./tsconfig.app.json",
+      "composite": true // Added for Vercel
+    },
+    { 
+      "path": "./tsconfig.node.json",
+      "composite": true // Added for Vercel
+    },
+    { 
+      "path": "./tsconfig.vitest.json",
+      "composite": true // Added for Vercel
+    }
   ]
 }
