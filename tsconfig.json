@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
     /* Base Configuration */
-    "baseUrl": ".",
     "target": "ES2022",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "baseUrl": ".",
     
     /* Strict Type-Checking */
     "strict": true,
@@ -66,8 +66,7 @@
     "src/**/*.tsx",
     "src/**/*.json",
     "vite.config.ts",
-    "vitest.config.ts",
-    "declarations.d.ts"
+    "vitest.config.ts"
   ],
   
   "exclude": [
@@ -81,36 +80,17 @@
   ],
   
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" },
-    { "path": "./tsconfig.vitest.json" }
-  ]
-}
-{
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "NodeNext", // Changed from ESNext
-    "moduleResolution": "NodeNext",
-    "strict": true,
-    "jsx": "react-jsx",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
+    { 
+      "path": "./tsconfig.app.json",
+      "composite": true
     },
-    "types": [
-      "vite/client",
-      "vitest/globals"
-    ],
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
-  },
-  "include": [
-    "src",
-    "vite.config.ts"
-  ],
-  "exclude": [
-    "node_modules"
+    { 
+      "path": "./tsconfig.node.json",
+      "composite": true
+    },
+    { 
+      "path": "./tsconfig.vitest.json",
+      "composite": true
+    }
   ]
 }
