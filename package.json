@@ -4,18 +4,18 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 3000 --open",
+    "dev": "vite --port 3000 --open --mode development",
     "start": "vite preview --port 3000",
-    "build": "vite build --emptyOutDir",
+    "build": "vite build --emptyOutDir --mode production",
     "build:dev": "vite build --mode development",
-    "preview": "vite preview",
-    "lint": "eslint . --ext .ts,.tsx --fix",
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "tsc --noEmit --watch",
+    "preview": "vite preview --port 3000",
+    "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
+    "type-check": "tsc --noEmit --skipLibCheck",
+    "type-check:watch": "tsc --noEmit --watch --skipLibCheck",
     "format": "prettier --write .",
     "prepare": "husky install",
     "postinstall": "npm run type-check",
-    "test": "vitest",
+    "test": "vitest run",
     "test:watch": "vitest watch",
     "test:coverage": "vitest run --coverage",
     "check": "npm-run-all --parallel lint type-check test",
@@ -26,8 +26,8 @@
     "@radix-ui/react-dialog": "^1.0.3",
     "@radix-ui/react-dropdown-menu": "^2.0.3",
     "@radix-ui/react-slot": "^1.0.2",
-    "@supabase/supabase-js": "^2.50.0",
-    "@tanstack/react-query": "^5.29.0",
+    "@supabase/supabase-js": "^2.39.8",
+    "@tanstack/react-query": "^5.29.5",
     "@tanstack/react-query-devtools": "^5.29.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
@@ -36,7 +36,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.0",
-    "react-router-dom": "^6.22.1",
+    "react-router-dom": "^6.22.3",
     "sonner": "^1.4.1",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",
@@ -48,8 +48,8 @@
     "@testing-library/user-event": "^14.5.2",
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20.10.5",
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.18",
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
@@ -62,37 +62,42 @@
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "glob": "^9.3.5",
+    "glob": "^10.3.10",
     "husky": "^8.0.3",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
-    "rimraf": "^4.4.1",
+    "rimraf": "^5.0.5",
     "tailwindcss": "^3.4.0",
-    "typescript": "^5.3.3",
-    "vite": "^5.4.19",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.8",
     "vite-plugin-checker": "^0.6.0",
-    "vitest": "^1.4.0",
+    "vitest": "^1.5.0",
     "jsdom": "^24.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "overrides": {
+    "glob": "^10.3.10",
+    "rimraf": "^5.0.5"
   },
   "browserslist": {
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all",
-      "not IE 11"
+      "not op_mini all"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version",
-      "last 1 edge version"
+      "last 1 safari version"
     ]
   },
   "engines": {
     "node": ">=18.0.0",
-    "npm": ">=9.0.0",
-    "pnpm": ">=8.0.0"
+    "npm": ">=9.0.0"
   },
   "volta": {
     "node": "18.18.2",
